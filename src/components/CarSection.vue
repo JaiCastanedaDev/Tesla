@@ -38,8 +38,8 @@
           </div>
         </div>
       </footer>
-       <div class="pb-4 button-padding" v-if="showButton3">
-            <p
+       <div class="pb-4 button-padding">
+            <p v-if="showButton3"
               href="#"
               class="border-b-[1px] border-black text-xs text-black inline-block"
               hidden
@@ -48,7 +48,6 @@
           </p>
           </div>
     </div>
-
     <div class="absolute top-0 bottom-0 h-full w-full z-10">
       <slot name="image"></slot>
     </div>
