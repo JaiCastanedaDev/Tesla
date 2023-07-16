@@ -19,7 +19,7 @@
         </template>
         <template v-slot:title-button-1> Explorar inventario </template>
         <template v-slot:title-button-2> Pedido personalizado </template>
-        <template v-slot:title-button-3>Disponible con Moves iii</template>
+        <template v-slot:title-button-3>Disponible con Moves III</template>
       </CarSection>
     </div>
     <div class="snap-center">
@@ -37,6 +37,7 @@
         </template>
         <template v-slot:title-button-1> Explorar inventario </template>
         <template v-slot:title-button-2> Pedido personalizado </template>
+        <template v-slot:title-button-3>Disponible con Moves III</template>
       </CarSection>
     </div>
     <div class="snap-center">

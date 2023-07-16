@@ -38,7 +38,7 @@
           </div>
         </div>
       </footer>
-       <div class="pb-4" v-if="showButton3">
+       <div class="pb-4 button-padding" v-if="showButton3">
             <p
               href="#"
               class="border-b-[1px] border-black text-xs text-black inline-block"
@@ -79,5 +79,14 @@ export default {
 .button-w-h{
   width: 260px;
   height: 40px;
+}
+@media (max-width: 768px) {
+  .button-w-h{
+    width: 305px;
+    height: 40px;
+  }
+  .button-padding{
+    padding-bottom: 6rem;
+  }
 }
 </style>
