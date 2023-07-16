@@ -41,7 +41,7 @@ export default {
         toggleMenu() {
             this.isOpen = !this.isOpen;
             console.log("aaa");
-        }
+        },
     },
 }
 </script>
