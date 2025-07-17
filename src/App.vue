@@ -4,7 +4,7 @@
     <div class="snap-center">
       <HeroSection></HeroSection>
     </div>
-    <div class="snap-center">
+    <div id="model-y" class="snap-center">
       <CarSection>
         <template v-slot:image>
           <img
@@ -22,7 +22,7 @@
         <template v-slot:title-button-3>Disponible con Moves III</template>
       </CarSection>
     </div>
-    <div class="snap-center">
+    <div id="model-3" class="snap-center">
       <CarSection>
         <template v-slot:image>
           <img
@@ -40,7 +40,7 @@
         <template v-slot:title-button-3>Disponible con Moves III</template>
       </CarSection>
     </div>
-    <div class="snap-center">
+    <div id="model-s" class="snap-center">
       <CarSection>
         <template v-slot:image>
           <img
@@ -57,7 +57,7 @@
         <template v-slot:title-button-2> Pedido personalizado </template>
       </CarSection>
     </div>
-    <div class="snap-center">
+    <div id="model-x" class="snap-center">
       <CarSection>
         <template v-slot:image>
           <img
@@ -72,7 +72,7 @@
         <template v-slot:title-button-2>Saber más</template>
       </CarSection>
     </div>
-    <div class="snap-center">
+    <div id="powerwall" class="snap-center">
       <CarSection>
         <template v-slot:image>
           <img
@@ -86,7 +86,7 @@
         <template v-slot:title-button-1>Saber más</template>
       </CarSection>
     </div>
-    <div class="snap-center">
+    <div id="carga" class="snap-center">
       <CarSection>
         <template v-slot:image>
           <img
