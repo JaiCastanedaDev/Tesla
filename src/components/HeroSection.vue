@@ -8,9 +8,10 @@
 
       <footer class="flex flex-col flex-grow justify-end pb-20">
         <div>
-        <a href="#" class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded font-medium text-white px-12
-         py-2 inline-block hover:bg-white hover:text-black transition-colors">Prueba de conducción</a>
-      </div>
+          <TestDriveButton @click="$emit('test-drive')">
+            Prueba de conducción
+          </TestDriveButton>
+        </div>
       </footer>
     </div>
 
@@ -20,8 +21,12 @@
   </section>
 </template>
 <script>
+import TestDriveButton from './TestDriveButton.vue';
 export default {
     name: 'HeroSection',
+    components: {
+      TestDriveButton
+    }
 }
 </script>
 <style>

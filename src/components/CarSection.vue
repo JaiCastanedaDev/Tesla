@@ -17,24 +17,18 @@
       <footer class="flex flex-col flex-grow justify-end pb-8">
         <div class="flex flex-row justify-center gap-5 flex-wrap">
           <div v-if="showButton1">
-            <a
-              href="#"
-              class="border-[3px] border-none bg-custom-color backdrop-blur-sm text-sm rounded font-medium text-white px-12 py-2 inline-block button-w-h
-               hover:bg-white hover:text-black transition-colors"
-              hidden
-            >
-              <slot name="title-button-1"></slot>
-            </a>
+            <TestDriveButton v-if="$slots['title-button-1']" @click="$emit('test-drive')">
+              <template v-if="$slots['title-button-1']" #default>
+                <slot name="title-button-1"></slot>
+              </template>
+            </TestDriveButton>
           </div>
           <div v-if="showButton2">
-            <a
-              href="#"
-              class="border-[3px] border-none bg-[#f4f4f4] backdrop-blur-[8px] text-sm rounded font-medium text-[#393c41] px-12 py-2 inline-block button-w-h
-               hover:bg-white hover:text-black transition-colors"
-              hidden
-            >
-              <slot name="title-button-2"></slot>
-            </a>
+            <LearnMoreButton v-if="$slots['title-button-2']" @click="$emit('learn-more')">
+              <template v-if="$slots['title-button-2']" #default>
+                <slot name="title-button-2"></slot>
+              </template>
+            </LearnMoreButton>
           </div>
         </div>
       </footer>
@@ -55,8 +49,15 @@
 </template>
 
 <script>
+import TestDriveButton from './TestDriveButton.vue';
+import LearnMoreButton from './LearnMoreButton.vue';
+
 export default {
   name: "CarSection",
+  components: {
+    TestDriveButton,
+    LearnMoreButton
+  },
   props: {
     imageCar: String,
   },
