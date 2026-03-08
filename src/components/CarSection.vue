@@ -17,14 +17,14 @@
       <footer class="flex flex-col flex-grow justify-end pb-8">
         <div class="flex flex-row justify-center gap-5 flex-wrap">
           <div v-if="showButton1">
-            <TestDriveButton v-if="$slots['title-button-1']" @click="$emit('test-drive')">
+            <TestDriveButton v-if="$slots['title-button-1']" :href="button1Href">
               <template v-if="$slots['title-button-1']" #default>
                 <slot name="title-button-1"></slot>
               </template>
             </TestDriveButton>
           </div>
           <div v-if="showButton2">
-            <LearnMoreButton v-if="$slots['title-button-2']" @click="$emit('learn-more')">
+            <LearnMoreButton v-if="$slots['title-button-2']" :href="button2Href">
               <template v-if="$slots['title-button-2']" #default>
                 <slot name="title-button-2"></slot>
               </template>
@@ -60,6 +60,14 @@ export default {
   },
   props: {
     imageCar: String,
+    button1Href: {
+      type: String,
+      default: '#'
+    },
+    button2Href: {
+      type: String,
+      default: '#'
+    }
   },
   data() {
     return {

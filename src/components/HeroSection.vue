@@ -8,7 +8,7 @@
 
       <footer class="flex flex-col flex-grow justify-end pb-20">
         <div>
-          <TestDriveButton @click="$emit('test-drive')">
+          <TestDriveButton :href="testDriveHref">
             Prueba de conducción
           </TestDriveButton>
         </div>
@@ -26,6 +26,12 @@ export default {
     name: 'HeroSection',
     components: {
       TestDriveButton
+    },
+    props: {
+      testDriveHref: {
+        type: String,
+        default: '#'
+      }
     }
 }
 </script>

@@ -1,15 +1,21 @@
 <template>
-  <button
-    class="border-[3px] border-none bg-[#f4f4f4] backdrop-blur-[8px] text-sm rounded font-medium text-[#393c41] px-12 py-2 inline-block button-w-h hover:bg-white hover:text-black transition-colors"
-    @click="$emit('click')"
+  <a
+    :href="href"
+    class="border-[3px] border-none bg-[#f4f4f4] backdrop-blur-[8px] text-sm rounded font-medium text-[#393c41] px-12 inline-flex items-center justify-center text-center whitespace-nowrap overflow-hidden text-ellipsis button-w-h hover:bg-white hover:text-black transition-colors"
   >
     <slot>Saber más</slot>
-  </button>
+  </a>
 </template>
 
 <script>
 export default {
   name: 'LearnMoreButton',
+  props: {
+    href: {
+      type: String,
+      default: '#'
+    }
+  }
 };
 </script>
 

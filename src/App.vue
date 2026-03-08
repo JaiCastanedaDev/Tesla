@@ -2,10 +2,13 @@
   <NavBar></NavBar>
   <main class="relative w-full h-screen overflow-auto snap-y snap-mandatory">
     <div class="snap-center">
-      <HeroSection></HeroSection>
+      <HeroSection test-drive-href="https://www.tesla.com/es_es/drive"></HeroSection>
     </div>
     <div id="model-y" class="snap-center">
-      <CarSection>
+      <CarSection
+        button1-href="https://www.tesla.com/es_es/inventory/new/modely"
+        button2-href="https://www.tesla.com/es_es/modely/design"
+      >
         <template v-slot:image>
           <img
             src="./assets/model-y.avif"
@@ -23,7 +26,10 @@
       </CarSection>
     </div>
     <div id="model-3" class="snap-center">
-      <CarSection>
+      <CarSection
+        button1-href="https://www.tesla.com/es_es/inventory/new/model3"
+        button2-href="https://www.tesla.com/es_es/model3/design"
+      >
         <template v-slot:image>
           <img
             src="./assets/model-3.avif"
@@ -41,7 +47,10 @@
       </CarSection>
     </div>
     <div id="model-s" class="snap-center">
-      <CarSection>
+      <CarSection
+        button1-href="https://www.tesla.com/es_es/inventory/new/models"
+        button2-href="https://www.tesla.com/es_es/models/design"
+      >
         <template v-slot:image>
           <img
             src="./assets/model-s.avif"
@@ -58,7 +67,10 @@
       </CarSection>
     </div>
     <div id="model-x" class="snap-center">
-      <CarSection>
+      <CarSection
+        button1-href="https://www.tesla.com/es_es/modelx/design"
+        button2-href="https://www.tesla.com/es_es/modelx"
+      >
         <template v-slot:image>
           <img
             src="./assets/model-x.avif"
@@ -73,7 +85,7 @@
       </CarSection>
     </div>
     <div id="powerwall" class="snap-center">
-      <CarSection>
+      <CarSection button1-href="https://www.tesla.com/es_es/solarpanels">
         <template v-slot:image>
           <img
             src="./assets/solar.avif"
@@ -87,7 +99,7 @@
       </CarSection>
     </div>
     <div id="carga" class="snap-center">
-      <CarSection>
+      <CarSection button2-href="https://shop.tesla.com/es_es">
         <template v-slot:image>
           <img
             src="./assets/charge.avif"
