@@ -5,12 +5,12 @@
     <!-- Menú principal -->
     <nav class="menu" :class="{ 'active': isOpen }">
       <ul class="flex flex-col md:flex-row [&>li>a]:font-semibold text-white text-sm [&>li>a]:inline-block [&>li>a]:py-2 [&>li>a]:px-4">
-        <li><a href="#model-s" @click="navigate('model-s')">Model S</a></li>
-        <li><a href="#model-3" @click="navigate('model-3')">Model 3</a></li>
-        <li><a href="#model-x" @click="navigate('model-x')">Model X</a></li>
-        <li><a href="#model-y" @click="navigate('model-y')">Model Y</a></li>
-        <li><a href="#powerwall" @click="navigate('powerwall')">Powerwall</a></li>
-        <li><a href="#carga" @click="navigate('carga')">Carga</a></li>
+        <li><a href="#model-s" @click.prevent="navigate('model-s')">Model S</a></li>
+        <li><a href="#model-3" @click.prevent="navigate('model-3')">Model 3</a></li>
+        <li><a href="#model-x" @click.prevent="navigate('model-x')">Model X</a></li>
+        <li><a href="#model-y" @click.prevent="navigate('model-y')">Model Y</a></li>
+        <li><a href="#powerwall" @click.prevent="navigate('powerwall')">Powerwall</a></li>
+        <li><a href="#carga" @click.prevent="navigate('carga')">Carga</a></li>
       </ul>
     </nav>
 
@@ -45,15 +45,36 @@ export default {
   methods: {
     toggleMenu() {
       this.isOpen = !this.isOpen;
-      console.log("toggleMenu activado:", this.isOpen);
     },
     navigate(sectionId) {
-      console.log("Clic en sección:", sectionId);
-      this.isOpen = false; // cerrar menú en móvil
-      const el = document.getElementById(sectionId);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+      this.isOpen = false;
+      if (this.$route.path !== '/') {
+        this.$router.push({ path: '/', hash: `#${sectionId}` });
+        return;
       }
+      this.scrollToSection(sectionId);
+    },
+    scrollToSection(sectionId) {
+      const el = document.getElementById(sectionId);
+      if (!el) {
+        return;
+      }
+      el.scrollIntoView({ behavior: 'smooth' });
+    },
+  },
+  watch: {
+    '$route.hash'(newHash) {
+      if (this.$route.path !== '/' || !newHash) {
+        return;
+      }
+      const sectionId = newHash.replace('#', '');
+      this.$nextTick(() => this.scrollToSection(sectionId));
+    }
+  },
+  mounted() {
+    if (this.$route.path === '/' && this.$route.hash) {
+      const sectionId = this.$route.hash.replace('#', '');
+      this.$nextTick(() => this.scrollToSection(sectionId));
     }
   }
 }

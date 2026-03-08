@@ -30,7 +30,7 @@ export default {
     props: {
       testDriveHref: {
         type: String,
-        default: '#'
+        default: '/prueba-conduccion'
       }
     }
 }

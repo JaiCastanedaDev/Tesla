@@ -1,10 +1,11 @@
 <template>
-  <a
-    :href="href"
+  <component
+    :is="linkTag"
+    v-bind="linkAttrs"
     class="border-[3px] border-none bg-[#f4f4f4] backdrop-blur-[8px] text-sm rounded font-medium text-[#393c41] px-12 inline-flex items-center justify-center text-center whitespace-nowrap overflow-hidden text-ellipsis button-w-h hover:bg-white hover:text-black transition-colors"
   >
     <slot>Saber más</slot>
-  </a>
+  </component>
 </template>
 
 <script>
@@ -14,6 +15,17 @@ export default {
     href: {
       type: String,
       default: '#'
+    }
+  },
+  computed: {
+    isInternalRoute() {
+      return this.href.startsWith('/');
+    },
+    linkTag() {
+      return this.isInternalRoute ? 'router-link' : 'a';
+    },
+    linkAttrs() {
+      return this.isInternalRoute ? { to: this.href } : { href: this.href };
     }
   }
 };
